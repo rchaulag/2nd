@@ -1,0 +1,17 @@
+﻿@model LinqCrud.DataModels.Team
+
+
+<div class="jumbotron">
+    <div>
+        <form action="/Home/UpdateTeam/@Model.ID" method="post">
+            Name    :<input type="text" name="name" value="@Model.Name" /><br>
+            Location    :      <input type="text" name="Location" value="@Model.Location" /> <br>
+            Head Coach  :<input type="text" name="HeadCoach" value="@Model.HeadCoach" /><br>
+            Date Of Establishment   : <input type="date" name="FoundingYear" value="@Model.FoundingYear" /><br>
+
+            <button class="btn btn-info" type="submit"> Submits </button>
+            <button class="btn btn-danger" type="reset"> Reset</button>
+        </form>
+
+    </div>
+</div>

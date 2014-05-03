@@ -1,0 +1,37 @@
+﻿@model CRUD.Models.IndexVM
+@*since We are sending the ViewBag model ( the whole truck)*@
+
+<div class="jumbotron">
+    <div>
+        <form action="/Home/Index" method="post">
+            Name    :<input type="text" name="name" placeholder="Enter your name, please" /><br>
+            Location    :      <input type="text" name="Location" placeholder="Please Enter a location" /> <br>
+            Head Coach  :<input type="text" name="HeadCoach" placeholder="Enter the name of Head Coach, please" /><br>
+            Date Of Establishment   : <input type="date" name="FoundingYear" placeholder="Enter the year of Founding, please" /><br>
+
+            <button class="btn btn-info" type="submit"> Submits </button>
+            <button class="btn btn-danger" type="reset"> Reset</button>
+        </form>
+
+    </div>
+</div>
+
+
+<div class="jumbotron clearfix">
+
+    <div class="row">
+        
+            
+                @foreach (var item in Model.Teams)
+{
+    <ul>
+        <li>@item.Name <a class="btn btn-success" href="/Home/UpdateTeam/@item.ID"> Update</a>
+            <a class=" btn btn-danger" href="/Home/DeleteTeam/@item.ID"> Delete</a></li>  <li>@item.HeadCoach</li>
+        <li>@item.ID</li>
+        <li>@item.Name</li>
+        <li>@item.Location </li>
+
+    </ul>         }
+            </div>
+    
+    </div>
